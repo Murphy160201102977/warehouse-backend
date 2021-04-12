@@ -7,6 +7,9 @@ import lombok.Setter;
 import java.util.Date;
 import javax.persistence.*;
 
+/**
+ * @author Administrator
+ */
 @Table(name = "warehouse..user")
 @Getter
 @Setter
