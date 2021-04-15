@@ -5,11 +5,13 @@ import com.nurphy.warehouse.pojo.Response;
 import com.nurphy.warehouse.pojo.User;
 import com.nurphy.warehouse.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 /**
  *用户服务实现
  * @author Administrator
  */
+@Service
 public class UserServiceImpl implements UserService {
     @Autowired
     UserMapper userMapper;

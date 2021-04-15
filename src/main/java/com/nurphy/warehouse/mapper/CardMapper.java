@@ -1,7 +1,19 @@
 package com.nurphy.warehouse.mapper;
 
 import com.nurphy.warehouse.pojo.Card;
-import tk.mybatis.MyMapper;
+import org.springframework.stereotype.Repository;
 
-public interface CardMapper extends MyMapper<Card> {
+@Repository
+public interface CardMapper {
+    int deleteByPrimaryKey(Integer id);
+
+    int insert(Card record);
+
+    int insertSelective(Card record);
+
+    Card selectByPrimaryKey(Integer id);
+
+    int updateByPrimaryKeySelective(Card record);
+
+    int updateByPrimaryKey(Card record);
 }

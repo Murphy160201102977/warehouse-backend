@@ -17,8 +17,17 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @PostMapping(value="/users/register")
+    @PostMapping(value="/user/register")
     public Response<User> register(@RequestBody User user){
         return userService.addUser(user);
     }
+    @PostMapping(value="/user/login")
+    public Response<User> login(@RequestBody User user){
+        return null;
+    }
+    @PostMapping(value="/user/update")
+    public Response<User> updateUser(@RequestBody User user){
+        return null;
+    }
+
 }

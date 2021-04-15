@@ -1,42 +1,42 @@
 package com.nurphy.warehouse.pojo;
 
-import lombok.Getter;
-import lombok.Setter;
-
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.io.Serializable;
 import java.util.Date;
-import javax.persistence.*;
+import lombok.Data;
 
-@Table(name = "warehouse..record")
-@Getter
-@Setter
-public class Record {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+/**
+ * record
+ * @author 
+ */
+@ApiModel(value="com.nurphy.warehouse.pojo.Record")
+@Data
+public class Record implements Serializable {
     private Integer id;
 
-    @Column(name = "card_id")
     private Integer cardId;
 
-    @Column(name = "store_id")
     private Integer storeId;
 
     /**
      * 出/入库数量
      */
+    @ApiModelProperty(value="出/入库数量")
     private Integer number;
 
     /**
      * 0:出库
-1：入库 0:出库
+     * 1：入库 0:出库
      */
+    @ApiModelProperty(value="0:出库 1：入库 0:出库")
     private Byte type;
 
-    @Column(name = "user_id")
     private String userId;
 
-    @Column(name = "created_date")
     private Date createdDate;
 
-    @Column(name = "updated_date")
     private Date updatedDate;
+
+    private static final long serialVersionUID = 1L;
 }

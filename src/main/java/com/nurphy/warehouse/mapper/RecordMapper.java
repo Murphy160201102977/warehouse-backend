@@ -1,7 +1,19 @@
 package com.nurphy.warehouse.mapper;
 
 import com.nurphy.warehouse.pojo.Record;
-import tk.mybatis.MyMapper;
+import org.springframework.stereotype.Repository;
 
-public interface RecordMapper extends MyMapper<Record> {
+@Repository
+public interface RecordMapper {
+    int deleteByPrimaryKey(Integer id);
+
+    int insert(Record record);
+
+    int insertSelective(Record record);
+
+    Record selectByPrimaryKey(Integer id);
+
+    int updateByPrimaryKeySelective(Record record);
+
+    int updateByPrimaryKey(Record record);
 }

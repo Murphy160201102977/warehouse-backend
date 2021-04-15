@@ -1,8 +1,17 @@
 package com.nurphy.warehouse.mapper;
 
 import com.nurphy.warehouse.pojo.User;
-import tk.mybatis.MyMapper;
 
-public interface UserMapper extends MyMapper<User> {
+public interface UserMapper {
+    int deleteByPrimaryKey(Integer id);
 
+    int insert(User record);
+
+    int insertSelective(User record);
+
+    User selectByPrimaryKey(Integer id);
+
+    int updateByPrimaryKeySelective(User record);
+
+    int updateByPrimaryKey(User record);
 }

@@ -17,6 +17,12 @@ public interface UserService {
      * @return
      */
     Response<User> addUser(User user);
+    /**
+     * 增加用户
+     * @param user
+     * @return
+     */
+
 
     Response<Boolean> updateUser(User user);
 }

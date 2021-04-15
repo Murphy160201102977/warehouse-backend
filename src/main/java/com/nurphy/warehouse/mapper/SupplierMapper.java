@@ -1,7 +1,17 @@
 package com.nurphy.warehouse.mapper;
 
 import com.nurphy.warehouse.pojo.Supplier;
-import tk.mybatis.MyMapper;
 
-public interface SupplierMapper extends MyMapper<Supplier> {
+public interface SupplierMapper {
+    int deleteByPrimaryKey(Integer id);
+
+    int insert(Supplier record);
+
+    int insertSelective(Supplier record);
+
+    Supplier selectByPrimaryKey(Integer id);
+
+    int updateByPrimaryKeySelective(Supplier record);
+
+    int updateByPrimaryKey(Supplier record);
 }

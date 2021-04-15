@@ -1,45 +1,39 @@
 package com.nurphy.warehouse.pojo;
 
-import lombok.Getter;
-import lombok.Setter;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.io.Serializable;
+import java.time.LocalDateTime;
+import lombok.Data;
 
-import java.util.Date;
-import javax.persistence.*;
-
-@Table(name = "warehouse..store")
-@Getter
-@Setter
-public class Store {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+/**
+ * store
+ * @author 
+ */
+@ApiModel(value="com.nurphy.warehouse.pojo.Store")
+@Data
+public class Store implements Serializable {
     private Integer id;
 
     private String name;
 
     private String address;
 
-    @Column(name = "charge_person")
     private String chargePerson;
 
-    @Column(name = "charge_phone")
     private String chargePhone;
 
-    /**
-     * 0：正常
-1：停用
-2：满
-
-     */
+    @ApiModelProperty(value="0：正常 1：停用 2：满 ")
     private Byte status;
 
     private Integer num;
 
-    @Column(name = "now_num")
     private Integer nowNum;
 
-    @Column(name = "created_date")
-    private Date createdDate;
+    private LocalDateTime createdDate;
 
-    @Column(name = "updated_date")
-    private Date updatedDate;
+    private LocalDateTime updatedDate;
+
+    private static final long serialVersionUID = 1L;
+
 }
