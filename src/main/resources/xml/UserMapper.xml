@@ -20,6 +20,9 @@
     from user
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="searchAll" resultType="com.nurphy.warehouse.pojo.User">
+    select * from user;
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from user
     where id = #{id,jdbcType=INTEGER}

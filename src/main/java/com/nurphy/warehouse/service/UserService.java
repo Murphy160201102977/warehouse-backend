@@ -25,4 +25,6 @@ public interface UserService {
 
 
     Response<Boolean> updateUser(User user);
+
+    Response<User> getUser();
 }

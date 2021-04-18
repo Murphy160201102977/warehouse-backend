@@ -14,7 +14,7 @@ public class SupplierController {
 
     }
 
-    @PostMapping(value="/supplier/add")
+    @PostMapping(value="/supplier/find")
     public void findSupplier(){
 
     }

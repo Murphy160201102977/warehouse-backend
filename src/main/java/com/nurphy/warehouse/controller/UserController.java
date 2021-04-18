@@ -4,6 +4,7 @@ import com.nurphy.warehouse.pojo.Response;
 import com.nurphy.warehouse.pojo.User;
 import com.nurphy.warehouse.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,5 +30,8 @@ public class UserController {
     public Response<User> updateUser(@RequestBody User user){
         return null;
     }
-
+    @GetMapping("/getUser")
+    public Response<User> getUser(){
+        return userService.getUser();
+    }
 }

@@ -18,16 +18,26 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Response<User> addUser(User user) {
+        Response<User> userResponse=new Response<>();
+        userResponse.setData(user);
         if(userMapper.insert(user)>0){
-            return Response.of().setData(user);
+            return userResponse;
         }
         else{
-            return Response.of().setCode(500).setMessage("插入用户失败！");
+            return userResponse.setCode(500).setMessage("插入用户数据失败！");
         }
     }
 
     @Override
     public Response<Boolean> updateUser(User user) {
         return null;
+    }
+
+    @Override
+    public Response<User> getUser() {
+        Response<User> response=new Response<>();
+        User user=userMapper.selectById(1);
+        response.setData(user);
+        return response;
     }
 }
