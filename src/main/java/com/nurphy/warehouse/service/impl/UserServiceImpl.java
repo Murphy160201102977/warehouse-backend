@@ -24,7 +24,7 @@ public class UserServiceImpl implements UserService {
             return userResponse;
         }
         else{
-            return userResponse.setCode(500).setMessage("插入用户数据失败！");
+            return userResponse.setCode("500").setMessage("插入用户数据失败！");
         }
     }
 

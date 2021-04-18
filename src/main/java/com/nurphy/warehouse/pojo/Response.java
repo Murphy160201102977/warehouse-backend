@@ -12,11 +12,18 @@ import lombok.experimental.Accessors;
 @Setter
 @Accessors(chain = true)
 public class Response<T> {
-    private Integer code;
+    private String code;
     private String message;
     private T data;
 
-    public static <T> Response of(){
+    public static <T> Response<T> create(){
         return new Response<T>();
+    }
+
+    public static <T> Response<T> returnSuccess(T data){
+        Response<T> response=new Response<>();
+        response.setCode("200");
+        response.setData(data);
+        return response;
     }
 }

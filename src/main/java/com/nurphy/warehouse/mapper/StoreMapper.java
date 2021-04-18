@@ -3,6 +3,10 @@ package com.nurphy.warehouse.mapper;
 import com.nurphy.warehouse.pojo.Store;
 import org.springframework.stereotype.Repository;
 
+/**
+ * 仓库Mapper
+ * @author Administrator
+ */
 @Repository
 public interface StoreMapper {
     int deleteByPrimaryKey(Integer id);

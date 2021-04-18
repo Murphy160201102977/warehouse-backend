@@ -14,13 +14,13 @@
   <sql id="Base_Column_List">
     id, card_id, store_id, `number`, `type`, user_id, created_date, updated_date
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from record
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteById" parameterType="java.lang.Integer">
     delete from record
     where id = #{id,jdbcType=INTEGER}
   </delete>

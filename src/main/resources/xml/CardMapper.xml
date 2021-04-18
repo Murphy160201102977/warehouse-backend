@@ -20,6 +20,14 @@
     from card
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="findAllType" resultType="java.lang.String">
+     select
+     `name`
+     from
+     card
+     group by
+     `name`;
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from card
     where id = #{id,jdbcType=INTEGER}
